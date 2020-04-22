@@ -13,11 +13,6 @@ using namespace std;
 
 int main () {
 
-  ofstream myfile;
-  myfile.open ("example.txt");
-  myfile << "Writing this to a file.\n";
-  myfile.close();
-
   Geeks gee;
 
   std::vector<double> vin1 (std::begin(v1), std::end(v1));
@@ -39,5 +34,6 @@ int main () {
 
   std::vector<double> VAL(std::begin(uval),std::end(uval));
   std::cout << gee.SetMemebership(VAL);
+  gee.readDataSet("DataTest/SetMembershipData.csv",3);
   return 0;
 }

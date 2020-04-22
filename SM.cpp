@@ -4,6 +4,7 @@
 #include <numeric>
 #include <vector>
 #include <cmath>
+#include <sstream>
 #include <limits>
 
 
@@ -72,6 +73,36 @@ public:
       if(Ylower<Yloc) Ylower=Yloc;
     }
     return (Yupper+Ylower)/2;
+  }
+  void readDataSet(const std::string dir,int nVar){
+    //std::cout << "Something" << '\n';
+    string line;
+    ifstream myfile;
+    myfile.open (dir);
+    if (myfile.is_open())
+  {
+    U.clear();
+    for (size_t j = 0; j <= nVar; j++) {
+       std::vector<double> V;
+       U.push_back(V);
+    }
+    std::cout << int(U.size()) << '\n';
+    while ( getline (myfile,line) )
+    {
+      std::istringstream ss( line );
+
+      for (size_t j = 0; j <= nVar; j++) {
+        std::string s;
+        if (!getline( ss, s, ',' )) break;
+        U[j].push_back(std::stod(s));
+      }
+    }
+    myfile.close();
+  }
+  else cout << "Unable to open file";
+  for(auto a: U[0]){
+    std::cout << a << '\n';
+  }
   }
 
 };
