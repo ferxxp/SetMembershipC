@@ -4,7 +4,7 @@
 #include <numeric>
 #include <vector>
 #include <cmath>
-#include <algorithm>
+#include <algorithm> 
 #include "DataTest/var.cpp"
 
 #include "SM.h"

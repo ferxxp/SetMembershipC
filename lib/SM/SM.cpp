@@ -6,6 +6,7 @@
 #include <cmath>
 #include <sstream>
 #include <limits>
+#include <algorithm> 
 #include "SM.h"
 
 
